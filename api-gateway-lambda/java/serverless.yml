@@ -1,0 +1,37 @@
+service: my-bolt-app # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: java11
+  stage: ${opt:stage, 'dev'}
+  # https://www.serverless.com/framework/docs/deprecations/#AWS_API_GATEWAY_NAME_STARTING_WITH_SERVICE
+  apiGateway:
+    shouldStartNameWithService: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync
+      Resource: "*"
+
+  environment:
+    SERVERLESS_STAGE: ${opt:stage, 'dev'}
+    SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
+    SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+
+package:
+  artifact: build/libs/my-bolt-app.jar
+
+functions:
+  warmup:
+    handler: hello.WarmupHandler
+    timeout: 120 # optional, in seconds, default is 6
+    events:
+      - schedule: rate(3 minutes)
+  api:
+    handler: hello.SlackEventHandler
+    timeout: 20 # optional, in seconds, default is 6
+    events:
+      - http:
+          path: slack/events
+          method: post

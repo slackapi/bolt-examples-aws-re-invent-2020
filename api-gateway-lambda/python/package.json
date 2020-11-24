@@ -1,0 +1,22 @@
+{
+  "name": "my-bolt-app",
+  "version": "1.0.0",
+  "description": "Bolt for Java App on AWS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slackapi/bolt-examples-aws-re-invent-2020.git"
+  },
+  "author": "Slack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slackapi/bolt-examples-aws-re-invent-2020/issues"
+  },
+  "homepage": "https://github.com/slackapi/bolt-examples-aws-re-invent-2020#readme",
+  "dependencies": {
+    "serverless": "^2.12.0"
+  }
+}

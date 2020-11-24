@@ -1,0 +1,35 @@
+plugins {
+  id("application")
+}
+repositories {
+  mavenCentral()
+}
+dependencies {
+  implementation("com.amazonaws:aws-lambda-java-core:1.2.1")
+  implementation("com.amazonaws:aws-java-sdk-lambda:1.11.907")
+  implementation("com.amazonaws:aws-java-sdk-s3:1.11.907")
+  implementation("com.slack.api:bolt:1.3.2")
+  implementation("com.slack.api:bolt-jetty:1.3.2")
+  implementation("com.slack.api:bolt-aws-lambda:1.3.2")
+  implementation("ch.qos.logback:logback-classic:1.2.3")
+}
+application {
+  mainClassName = "hello.JettyApp"
+}
+run {
+  // gradle run -DslackLogLevel=debug
+  systemProperty "org.slf4j.simpleLogger.log.com.slack.api", System.getProperty("slackLogLevel")
+}
+
+// gradle build && java -jar build/libs/my-bolt-app.jar
+configurations {
+  jar.archiveName = 'my-bolt-app.jar'
+}
+jar {
+  manifest {
+    attributes 'Main-Class': 'hello.JettyApp'
+  }
+  // Use configurations.runtimeClasspath to collect implementation deps
+  from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+

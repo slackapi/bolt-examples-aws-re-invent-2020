@@ -1,0 +1,36 @@
+service: my-bolt-app
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: ${opt:stage, 'dev'}
+  # https://www.serverless.com/framework/docs/deprecations/#AWS_API_GATEWAY_NAME_STARTING_WITH_SERVICE
+  apiGateway:
+    shouldStartNameWithService: true
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync
+      Resource: "*"
+  environment:
+    SERVERLESS_STAGE: ${opt:stage, 'dev'}
+    SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
+    SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+
+# you can add packaging information here
+package:
+  include:
+    - handler.py
+    - lib/*
+  exclude:
+    - README.md
+
+functions:
+  api:
+    handler: handler.slack_events
+    events:
+      - http:
+          path: slack/events
+          method: post
