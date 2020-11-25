@@ -2,21 +2,7 @@
 
 # Create a new Slack app
 
-## Create and enable a Slack app
-
-* Go to https://api.slack.com/apps
-* Create a new Slack app
-* Go to *Features* > *OAuth & Permissions*
-* Add `app_mentions:read` to *Scopes* > *Bot Token Scopes*
-* Add `chat:write` to *Scopes* > *Bot Token Scopes*
-* Go to *Settings* > *Install App*
-* Click *Install to Workspace*
-* Complete the installation process
-
-## Grab the credentials
-
-* SLACK_SIGNING_SECRET: *Settings* > *Basic Information* > *App Credentials* > *Signing Secret*
-* SLACK_BOT_TOKEN: *Settings* > *Install App* > *OAuth Tokens for Your Team* > *Bot User OAuth Access Token*
+Refer to [this guide](/README.md).
 
 # How to deploy this app to AWS
 
@@ -38,13 +24,7 @@ export SLS_DEBUG=*
 
 ## Configure the *Request URL* for Events API
 
-* Go to https://api.slack.com/apps and choose your app
-* Go to *Features* > *Event Subscriptions*
-* Turn the feature on
-* Set *Request URL* as `https://{your domain}.execute-api.us-east-1.amazonaws.com/dev/slack/events`
-* Click *Subscribe to bot events*
-* Add `app_mention` event
-* Click *Save Changes* button
+Refer to [this guide](/README.md). The **Request URL** should be `https://{your domain}.execute-api.{your region}.amazonaws.com/{serverless stage}/slack/events`.
 
 # Local development using Jetty
 
