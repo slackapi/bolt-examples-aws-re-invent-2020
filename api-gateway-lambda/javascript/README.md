@@ -80,19 +80,12 @@ Now that your Slack app is deployed, you can register your AWS Lambda endpoint w
 
 1. Go to https://api.slack.com/apps
 1. Select your app
-1. Select **Interactivity & Shortcuts**
-    1. Enable **Interactivity**
-    1. Set the **Request URL** to `https://{your-domain}.amazonaws.com/dev/slack/events`
-    1. Select **Save Changes**
 1. Select **Event Subscriptions**
     1. Enable **Events**
     1. Set the **Request URL** to `https://{your-domain}.amazonaws.com/dev/slack/events`
     1. Scroll down to **Subscribe to Bot Events**
     1. Add the following bot events:
-        1. `message.channels`
-        1. `message.groups`
-        1. `message.im`
-        1. `message.mpim`
+        - `app_mention`
     1. Select **Save Changes**
 1. Reinstall your app because permissions changed
     1. Select **OAuth & Permissions**
@@ -100,13 +93,13 @@ Now that your Slack app is deployed, you can register your AWS Lambda endpoint w
 
 ## 6. Test your Slack app
 
-You can test your app by opening a Slack workspace and saying "hello" to your app:
+You can test your app by opening a Slack workspace and mentioning your app:
 
-> 💬 hello!
+> 💬 Howdy @MySlackBot!
 >
 > 🤖 Hey there, Jane!
 
-_Remember, your app must be the channel or DM where you say "hello"._
+_Remember, your app must be in the channel or DM where you mention it._
 
 ## 7. Run on local machine
 
@@ -123,8 +116,6 @@ ngrok http 3000 -subdomain=my-unique-name
 ```
 
 Update your Slack app settings to use your ngrok address:
-1. **Interactivity & Shortcuts**
-    1. Set the **Request URL** to `https://my-unique-name.ngrok.io/slack/events`
 1. **Event Subscriptions**
     1. Set the **Request URL** to `https://my-unique-name.ngrok.io/slack/events`
 
