@@ -9,7 +9,7 @@ const app = new App({
   receiver
 });
 
-// Respond to an AWS he!alth check
+// Respond to an AWS health check
 receiver.router.get('/', (req, res) => {
   res.status(200).send('ok');
 });
