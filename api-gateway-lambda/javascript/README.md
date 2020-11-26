@@ -22,7 +22,7 @@ Before you begin, you may want to follow our [Getting Started guide][bolt-guide]
 
 ### Install AWS CLI
 
-Follow the guide to [install the AWS CLI for macOS, Windows, or Linux][aws-cli-install].
+Follow the guide to [install the AWS CLI v2 for macOS, Windows, or Linux][aws-cli-install].
 
 ### Configure AWS CLI
 
