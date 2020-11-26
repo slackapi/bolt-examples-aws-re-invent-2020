@@ -34,7 +34,7 @@ aws configure
 
 ## 2. Set up local project
 
-For local development, we recommend using a [Python virtual environment](venv) to manage your project’s dependencies.
+For local development, we recommend using a [Python virtual environment][venv] to manage your project’s dependencies.
 
 ```zsh
 python3 -m venv .venv
