@@ -134,7 +134,7 @@ Follow the steps to [test your app](#6-test-your-slack-app).
 [aws-cli-configure-user]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-creds
 [aws-lambda]: https://aws.amazon.com/lambda/
 [venv]: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
-[bolt-app]: https://slack.dev/bolt-python/tutorial/getting-started
+[bolt-app]: https://github.com/slackapi/bolt-python/tree/main/examples/getting_started
 [bolt-guide]: https://slack.dev/bolt-python/tutorial/getting-started
 [bolt-website]: https://slack.dev/bolt-python/
 [ngrok-install]: https://api.slack.com/tutorials/tunneling-with-ngrok

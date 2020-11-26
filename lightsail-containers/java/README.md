@@ -1,4 +1,4 @@
-# Lightsail Containers ⚡️ Bolt for Java
+# Amazon Lightsail Containers ⚡️ Bolt for Java
 
 > Slack app example for deploying to Lightsail Containers with Bolt for Java
 
@@ -34,7 +34,9 @@ aws configure
 
 ## 2. Set up local project
 
-If you want to just build and deploy this app as-is, all you need is [Docker](docker) for it. To build this app without Docker, you will use [Gradle](gradle). You can install the build tool by following [the installation guide](gradle-install). You may also want to [install ngrok][ngrok-install] to start a local tunnel for local development.
+If you want to just build and deploy this app as-is, all you need is [Docker][docker]. To build this app without Docker, you will use [Gradle][gradle].
+
+You can install the build tool by following [the Gradle installation guide][gradle-install]. You may also want to [install ngrok][ngrok-install] to start a local tunnel for local development.
 
 ## 3. Create a Slack app
 
@@ -67,7 +69,7 @@ aws lightsail create-container-service \
   --scale 1
 ```
 
-Run the following the command to build a Docker image and publish it to Lightsail Containers' registry:
+Run the following the command to build a Docker image and publish it to the Lightsail Containers' registry:
 
 ```zsh
 docker build . \
@@ -77,9 +79,13 @@ aws lightsail push-container-image \
   --service-name my-bolt-app \
   --image my-bolt-app-image:latest \
   --label this-is-it
+# ...
+# Refer to this image as ":my-bolt-app.this-is-it.1" in deployments.
 ```
 
-You can check the current status by the following commands at any time:
+Please remember your image name (e.g. `:my-bolt-app.this-is-it.1`) because we will use it in an upcoming next.
+
+You can check the current status any time with the following commands:
 
 ```zsh
 aws lightsail get-container-services
@@ -89,7 +95,7 @@ aws lightsail get-container-images --service-name my-bolt-app
 For app deployment, we use a JSON file as input. You can generate it this way:
 
 ```zsh
-# `aws lightsail push-container-image command` tells this
+# In the previous step, the `aws lightsail push-container-image` command returned this value to you.
 # The value always starts with ":"
 export LATEST_IMAGE_NAME=":my-bolt-app.this-is-it.{number}"
 
@@ -145,7 +151,7 @@ _Please note the endpoint `https://my-bolt-app.{random}.{region}.cs.amazonlights
 
 ## 5. Update Slack app settings
 
-Now that your Slack app is deployed, you can register your AWS Lambda endpoint with the Slack API:
+Now that your Slack app is deployed, you can register your Amazon Lightsail endpoint with the Slack API:
 
 1. Go to https://api.slack.com/apps
 1. Select your app
