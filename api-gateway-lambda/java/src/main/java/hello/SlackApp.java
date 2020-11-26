@@ -12,7 +12,8 @@ public class SlackApp {
         config.setSingleTeamBotToken(System.getenv(AppConfig.EnvVariableName.SLACK_BOT_TOKEN));
         var app = new App(config);
         app.event(AppMentionEvent.class, (req, ctx) -> {
-            ctx.say(":wave: Hi there!");
+            var userId = req.getEvent().getUser();
+            ctx.say("Hey there, <@" + userId + ">!");
             return ctx.ack();
         });
         return app;

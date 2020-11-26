@@ -7,8 +7,8 @@ app = App()
 
 
 @app.event("app_mention")
-def hello(say):
-    say(":wave: Hi there!")
+def hello(event, say):
+    say(f"Hey there, <@{event['user']}>!")
 
 
 from flask import Flask, request
@@ -25,4 +25,3 @@ def healthcheck():
 @flask_app.route("/slack/events", methods=["POST"])
 def slack_events():
     return handler.handle(request)
-

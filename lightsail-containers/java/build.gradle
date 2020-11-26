@@ -14,7 +14,7 @@ dependencies {
   implementation("ch.qos.logback:logback-classic:1.2.3")
 }
 application {
-  mainClassName = "hello.JettyApp"
+  mainClassName = "SlackApp"
 }
 run {
   // gradle run -DslackLogLevel=debug
@@ -27,7 +27,7 @@ configurations {
 }
 jar {
   manifest {
-    attributes 'Main-Class': 'hello.JettyApp'
+    attributes 'Main-Class': 'SlackApp'
   }
   // Use configurations.runtimeClasspath to collect implementation deps
   from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }

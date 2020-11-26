@@ -1,0 +1,10 @@
+node_modules
+jspm_packages
+package-lock.json
+.serverless
+.webpack
+.env
+.DS_Store
+.vscode
+
+lc.json
