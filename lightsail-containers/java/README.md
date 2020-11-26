@@ -134,7 +134,7 @@ while true; do
 done
 ```
 
-Once your container service's state becomes **"RUNNING"* (not, **"READY"**), the app is ready for receiving requests from Slack. To know the public endpoint URL, run the following command:
+Once your container service's state becomes **"RUNNING"** (not, **"READY"**), the app is ready for receiving requests from Slack. To know the public endpoint URL, run the following command:
 
 ```zsh
 echo `aws lightsail get-container-services \
