@@ -1,12 +1,12 @@
-# Lightsail Containers ⚡️ Bolt for Python
+# Lightsail Containers ⚡️ Bolt for Java
 
-> Slack app example for deploying to Lightsail Containers with Bolt for Python
+> Slack app example for deploying to Lightsail Containers with Bolt for Java
 
 ## Overview
 
-This is an example app that updates the [Getting Started ⚡️ Bolt for Python app][bolt-app] to be deployed to [Amazon Lightsail Containers][aws-lightsail] using the [AWS CLI][aws-cli-install].
+This is an example app that updates the [Getting Started ⚡️ Bolt for Java app][bolt-app] to be deployed to [Amazon Lightsail Containers][aws-lightsail] using the [AWS CLI][aws-cli-install].
 
-Before you begin, you may want to follow our [Getting Started guide][bolt-guide] to learn how to build your first Slack app using the [Bolt for Python framework][bolt-website].
+Before you begin, you may want to follow our [Getting Started guide][bolt-guide] to learn how to build your first Slack app using the [Bolt for Java framework][bolt-website].
 
 ## Getting started
 
@@ -34,18 +34,7 @@ aws configure
 
 ## 2. Set up local project
 
-If you want to just build and deploy this app as-is, all you need is [Docker](docker) for it.
-
-For local development, we recommend using a [Python virtual environment](venv) to manage your project’s dependencies.
-
-```zsh
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -U pip
-pip install -r requirements.txt
-```
-
-You may also want to [install ngrok][ngrok-install] to start a local tunnel for local development.
+If you want to just build and deploy this app as-is, all you need is [Docker](docker) for it. To build this app without Docker, you will use [Gradle](gradle). You can install the build tool by following [the installation guide](gradle-install). You may also want to [install ngrok][ngrok-install] to start a local tunnel for local development.
 
 ## 3. Create a Slack app
 
@@ -186,11 +175,7 @@ _Remember, your app must be in the channel or DM where you mention it._
 Open a terminal session to listen for incoming requests:
 
 ```zsh
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -U pip
-pip install -r requirements.txt
-FLASK_APP=main.py FLASK_ENV=development flask run -p 3000
+./gradlew run
 ```
 
 Open another terminal session to proxy Slack API requests locally:
@@ -210,9 +195,11 @@ Follow the steps to [test your app](#6-test-your-slack-app).
 [aws-cli-configure]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
 [aws-cli-configure-user]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-creds
 [aws-lightsail]: https://aws.amazon.com/lightsail/
-[venv]: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
-[bolt-guide]: https://slack.dev/bolt-python/tutorial/getting-started
-[bolt-website]: https://slack.dev/bolt-python/
+[bolt-app]: https://slack.dev/java-slack-sdk/guides/getting-started-with-bolt
+[bolt-guide]: https://slack.dev/java-slack-sdk/guides/getting-started-with-bolt
+[bolt-website]: https://slack.dev/java-slack-sdk/guides/bolt-basics
 [docker]: https://www.docker.com/
+[gradle]: https://gradle.org/
+[gradle-install]: https://gradle.org/install/
 [ngrok-install]: https://api.slack.com/tutorials/tunneling-with-ngrok
 [slack-app-settings]: https://api.slack.com/apps

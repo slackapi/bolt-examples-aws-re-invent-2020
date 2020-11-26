@@ -51,6 +51,7 @@ You may also want to [install ngrok][ngrok-install] to start a local tunnel for 
     * Name your app, _don't worry you can change it later!_
 1. Select **OAuth & Permissions**
     1. Scroll down to **Bot Token Scopes**
+        1. Add the scope `app_mentions:read`
         1. Add the scope `chat:write`
     1. Select **Install App to Workspace** at the top of the page
 
@@ -58,7 +59,7 @@ You may also want to [install ngrok][ngrok-install] to start a local tunnel for 
 
 ```zsh
 export SLACK_SIGNING_SECRET=<your-signing-secret> # Slack app settings > "Basic Information"
-export SLACK_BOT_TOKEN=<your-xoxb-bot-token>      # Slack app settings > "OAuth & Permission"
+export SLACK_BOT_TOKEN=<your-xoxb-bot-token>      # Slack app settings > "OAuth & Permissions"
 ```
 
 ## 4. Deploy to AWS Lambda
@@ -97,7 +98,7 @@ You can test your app by opening a Slack workspace and mentioning your app:
 
 > 💬 Howdy @MySlackBot!
 >
-> 🤖 Hey there, Jane!
+> 🤖 Hey there, @Jane!
 
 _Remember, your app must be in the channel or DM where you mention it._
 
@@ -112,6 +113,7 @@ npx serverless offline --noPrependStageInUrl
 Open another terminal session to proxy Slack API requests locally:
 
 ```zsh
+# -subdomain= is avalable only for paid accounts
 ngrok http 3000 -subdomain=my-unique-name
 ```
 
