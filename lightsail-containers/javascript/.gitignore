@@ -1,10 +1,9 @@
-node_modules
-jspm_packages
+# node / npm
+node_modules/
 package-lock.json
-.serverless
-.webpack
-.env
-.DS_Store
-.vscode
 
+# macOS
+.DS_Store
+
+# Lightsail
 lc.json
