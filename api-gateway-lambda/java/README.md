@@ -34,7 +34,7 @@ aws configure
 
 ## 2. Set up local project
 
-To build this app without Docker, you will use [Gradle](gradle). You can install the build tool by following [the installation guide](gradle-install). 
+To build this app without Docker, you will use [Gradle][gradle]. You can install the build tool by following [the installation guide][gradle-install]. 
 
 ```zsh
 ./gradlew build
