@@ -20,12 +20,10 @@ public class WarmupHandler implements RequestHandler<ApiGatewayRequest, ApiGatew
     // refer to serverless.yml
     private static final String SERVERLESS_SERVICE = "my-bolt-app";
     private static final String SERVERLESS_STAGE = System.getenv("SERVERLESS_STAGE");
-
     private List<String> functionNames = Arrays.asList(SERVERLESS_SERVICE + "-" + SERVERLESS_STAGE + "-api");
 
     @Override
     public ApiGatewayResponse handleRequest(ApiGatewayRequest req, Context context) {
-        LOGGER.info("received: {}", req);
         var lambda = AWSLambdaClient.builder().withRegion(Regions.US_EAST_1.getName()).build();
         for (String functionName : functionNames) {
             var invokeReq = new InvokeRequest().withFunctionName(functionName).withPayload("{\"body\":\"warmup=true\"}");

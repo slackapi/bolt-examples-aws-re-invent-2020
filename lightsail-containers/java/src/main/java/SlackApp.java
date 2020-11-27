@@ -10,7 +10,7 @@ public class SlackApp {
             ctx.say("Hey there, <@" + userId + ">!");
             return ctx.ack();
         });
-        app.endpoint("/", (req ,ctx) -> ctx.ack());
+        app.endpoint("/", (req ,ctx) -> ctx.ack()); // for AWS health check
         var server = new SlackAppServer(app, 80);
         server.start();
     }
