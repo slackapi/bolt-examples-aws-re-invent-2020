@@ -16,18 +16,12 @@ This project depends on the Bolt framework and we recommend reviewing the mainta
 
 ### Testing
 
-This package does not have unit tests but has implemented the command `npm test`.
+This package does not have unit tests but has implemented the command `npm test` or similar.
 
 If you'd like to add tests, please review our [contributing guide](./contributing.md) to learn how
 to open a discussion and pull request. We'd love to talk through setting up tests!
 
 ## Workflow
-
-### Versioning and Tags
-
-This project is versioned using [Semantic Versioning](http://semver.org/), particularly in the
-[npm flavor](https://docs.npmjs.com/getting-started/semantic-versioning). Each release is tagged
-using git.
 
 ### Fork
 
@@ -53,7 +47,6 @@ Labels are used to run issues through an organized workflow. Here are the basic 
 *  `needs feedback`: An issue that may have claimed to be a bug but was not reproducible, or was otherwise missing some information.
 *  `discussion`: An issue that is purely meant to hold a discussion. Typically the maintainers are looking for feedback in this issues.
 *  `question`: An issue that is like a support request because the user's usage was not correct.
-*  `semver:major|minor|patch`: Metadata about how resolving this issue would affect the version number.
 *  `security`: An issue that has special consideration for security reasons.
 *  `good first contribution`: An issue that has a well-defined relatively-small scope, with clear expectations. It helps when the testing approach is also known.
 *  `duplicate`: An issue that is functionally the same as another issue. Apply this only if you've linked the other issue by number.
