@@ -31,7 +31,7 @@ To get you started, select the platform and language that makes you happy:
 
 Got a question? Curious about best practices? Want to show off your latest app?
 
-Join the [Slack Developer Community](https://community.slack.com/) to connect with other developers! A few good channels to get you started are:
+Join the [Slack Developer Community](https://join.slack.com/t/community/shared_invite/enQtNzYxNzM5NzU0Mzg3LWFhZjE3ZjY1M2JhM2MzNGNmMmE0Zjc4Y2E5NDc2NGJiODAxNDMzN2Y1MjVlYWU3ZGVlYzhlMDVhNzA0Nzg1OGY) to connect with other developers! A few good channels to get you started are:
 - `#tools-bolt` to reach out to the team that built the Slack Bolt framework
 - `#slack-api` to ask question about... well.. the Slack API
 - `#lang-java` to learn Java best practices
