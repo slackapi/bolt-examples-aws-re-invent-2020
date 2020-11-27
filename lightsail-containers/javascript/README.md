@@ -86,7 +86,7 @@ aws lightsail push-container-image \
   --image my-bolt-app-image:latest \
   --label this-is-it
 # ...
-# Refer to this image as ":my-bolt-app-image.this-is-it.1" in deployments.
+# Refer to this image as ":my-bolt-app.this-is-it.1" in deployments.
 ```
 
 Please remember your image name (e.g. `:my-bolt-app.this-is-it.1`) because we will use it in an upcoming next.
