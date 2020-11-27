@@ -1,6 +1,5 @@
 package hello;
 
-import com.slack.api.bolt.App;
 import com.slack.api.bolt.aws_lambda.SlackApiLambdaHandler;
 import com.slack.api.bolt.aws_lambda.request.ApiGatewayRequest;
 
@@ -8,10 +7,6 @@ public class SlackEventHandler extends SlackApiLambdaHandler {
 
     public SlackEventHandler() {
         super(SlackApp.get());
-    }
-
-    public SlackEventHandler(App app) {
-        super(app);
     }
 
     @Override
