@@ -73,11 +73,11 @@ Run the following the command to build a Docker image and publish it to the Ligh
 
 ```zsh
 docker build . \
-  -t my-bolt-app-image
+  -t my-bolt-app
 
 aws lightsail push-container-image \
   --service-name my-bolt-app \
-  --image my-bolt-app-image:latest \
+  --image my-bolt-app:latest \
   --label this-is-it
 # ...
 # Refer to this image as ":my-bolt-app.this-is-it.1" in deployments.
