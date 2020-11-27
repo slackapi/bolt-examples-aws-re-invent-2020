@@ -101,8 +101,8 @@ aws lightsail get-container-images --service-name my-bolt-app
 For app deployment, we use a JSON file as input. You can generate it this way:
 
 ```zsh
-# In the previous step, the `aws lightsail push-container-image` command returned this value to you.
-# The value always starts with ":"
+# Replace with the value returned in the previous step from `aws lightsail push-container-image`
+# The value always starts with ":" and end with a number.
 export LATEST_IMAGE_NAME=":my-bolt-app.this-is-it.{number}"
 
 # Create `lc.json` file for the command we will run next
