@@ -16,11 +16,6 @@ dependencies {
 application {
   mainClassName = "hello.JettyApp"
 }
-run {
-  // gradle run -DslackLogLevel=debug
-  systemProperty "org.slf4j.simpleLogger.log.com.slack.api", System.getProperty("slackLogLevel")
-}
-
 // gradle build && java -jar build/libs/my-bolt-app.jar
 configurations {
   jar.archiveFileName = 'my-bolt-app.jar'
