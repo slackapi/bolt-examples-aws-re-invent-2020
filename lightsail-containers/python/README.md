@@ -104,8 +104,8 @@ aws lightsail get-container-images --service-name my-bolt-app
 For app deployment, we use a JSON file as input. You can generate it this way:
 
 ```zsh
-# In the previous step, the `aws lightsail push-container-image` command returned this value to you.
-# The value always starts with ":"
+# Replace with the value returned in the previous step from `aws lightsail push-container-image`
+# The value always starts with ":" and end with a number.
 export LATEST_IMAGE_NAME=":my-bolt-app.this-is-it.{number}"
 
 # Create `lc.json` file for the command we will run next
@@ -171,9 +171,6 @@ Now that your Slack app is deployed, you can register your Amazon Lightsail endp
     1. Add the following bot events:
         - `app_mention`
     1. Select **Save Changes**
-1. Reinstall your app because permissions changed
-    1. Select **OAuth & Permissions**
-    1. Select **Reinstall to Workspace**
 
 ## 6. Test your Slack app
 

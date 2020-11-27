@@ -90,9 +90,6 @@ Now that your Slack app is deployed, you can register your AWS Lambda endpoint w
     1. Add the following bot events:
         - `app_mention`
     1. Select **Save Changes**
-1. Reinstall your app because permissions changed
-    1. Select **OAuth & Permissions**
-    1. Select **Reinstall to Workspace**
 
 ## 6. Test your Slack app
 
