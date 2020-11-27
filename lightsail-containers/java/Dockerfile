@@ -9,6 +9,6 @@ EXPOSE 80
 ENTRYPOINT ["java",  "-jar", "/app/my-bolt-app.jar"]
 
 #
-# docker build . -t my-java-bolt-app-image
-# docker run -e SLACK_SIGNING_SECRET=$SLACK_SIGNING_SECRET -e SLACK_BOT_TOKEN=$SLACK_BOT_TOKEN -p 80:80 -it my-java-bolt-app-image
+# docker build . -t my-bolt-app
+# docker run -e SLACK_SIGNING_SECRET=$SLACK_SIGNING_SECRET -e SLACK_BOT_TOKEN=$SLACK_BOT_TOKEN -p 80:80 -it my-bolt-app
 #
